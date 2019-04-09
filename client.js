@@ -86,3 +86,9 @@ for ( employee of employees){
   console.log( bonusCalculator(employee));
 
 };
+
+//manipulating the DOM
+/*
+$('#employeeList').empty();
+$('#employeeList').append('<li>' + 'hi' + '</li>');
+*/
