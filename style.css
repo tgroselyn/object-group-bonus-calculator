@@ -1,0 +1,37 @@
+body {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    padding: 10px;
+}
+
+#calcButton {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px lightgrey;
+}
+
+#bonusTable {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.titleRow {
+    background-color: lightgrey;
+    font-weight: bold;
+}
+
+.titleRow td {
+    padding: 10px;
+}

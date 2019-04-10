@@ -5,18 +5,32 @@
     <title>Bonus Calculator Object Challenge</title>
     <script src="jquery.3.3.1.js"></script>
     <script src="client.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <h1>Bonus Calculator Object Challenge</h1>
     
-    <h3>Employee Bonuses</h3>
-    <ul id="employeeList1">
-    </ul>
-    <ul id="employeeList2">
-    </ul>
-    <ul id="employeeList3">
-    </ul>
-    <ul id="employeeList4">
-    </ul>
+    <button id="calcButton" type="button">Calculate Employee Bonuses</button>
+    <table id="bonusTable">
+      <tr class="titleRow">
+        <td>Name</td>
+        <td>Bonus Percentage</td>
+        <td>Total Bonus</td>
+        <td>Total Compensation</td>
+      </tr>
+      <tr>
+        <td><ul id="employeeList1"></ul>
+        </td>
+        <td>
+          <ul id="employeeList2"></ul>
+        </td>
+        <td>
+          <ul id="employeeList3"></ul>
+        </td>
+        <td>
+          <ul id="employeeList4"></ul>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>
