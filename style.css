@@ -21,6 +21,11 @@ li {
     box-shadow: 2px 2px 5px lightgrey;
 }
 
+#employeeTable {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
 #bonusTable {
     width: 100%;
     text-align: center;
@@ -33,5 +38,6 @@ li {
 }
 
 .titleRow td {
+    width: 25%;
     padding: 10px;
 }

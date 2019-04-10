@@ -103,28 +103,48 @@ for (let employee of employees){
 //manipulating the DOM using jQuery
 $(document).ready(readyNow);
 
-//outputToDom runs the bonusCalculator and outputs its results to the DOM
+//outputToDom outputs the initial employee list to the DOM
 function outputToDom() {
+//clear out ul's
+$('#employeeList1').empty();
+$('#employeeList2').empty();
+$('#employeeList3').empty();
+$('#employeeList4').empty();
+
+  for (let employee of employees) {
+
+    //append each item to its desired ul
+    $('#employeeList1').append('<li>' + employee.name + '</li>');
+    $('#employeeList2').append('<li>' + employee.employeeNumber + '</li>');
+    $('#employeeList3').append('<li>$' + employee.annualSalary + '</li>');
+    $('#employeeList4').append('<li>' + employee.reviewRating + '</li>');
+  }
+} //end outputToDom
+
+//outputBonusToDom runs the bonusCalculator and outputs its results to the DOM
+function outputBonusToDom() {
 
   //clear out ul's
-  $('#employeeList1').empty();
-  $('#employeeList2').empty();
-  $('#employeeList3').empty();
-  $('#employeeList4').empty();
+  $('#bonusList1').empty();
+  $('#bonusList2').empty();
+  $('#bonusList3').empty();
+  $('#bonusList4').empty();
   
   for (let employee of employees) {
     //run bonus calculator
     let empBonusInfo = bonusCalculator(employee);
 
     //append each item to its desired ul
-    $('#employeeList1').append('<li>' + empBonusInfo.name + '</li>');
-    $('#employeeList2').append('<li>' + empBonusInfo.bonusPercentage + '% </li>');
-    $('#employeeList3').append('<li>$' + empBonusInfo.totalBonus + '</li>');
-    $('#employeeList4').append('<li>$' + empBonusInfo.totalCompensation + '</li>');
+    $('#bonusList1').append('<li>' + empBonusInfo.name + '</li>');
+    $('#bonusList2').append('<li>' + empBonusInfo.bonusPercentage + '% </li>');
+    $('#bonusList3').append('<li>$' + empBonusInfo.totalBonus + '</li>');
+    $('#bonusList4').append('<li>$' + empBonusInfo.totalCompensation + '</li>');
   }
-} //end outputToDom
+} //end outputBonusToDom
 
 function readyNow() {
   console.log('jquery loaded')
+  
   outputToDom();
+  $('#calcButton').on('click', outputBonusToDom);
 }
