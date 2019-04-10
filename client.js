@@ -103,18 +103,26 @@ for (let employee of employees){
 //manipulating the DOM using jQuery
 $(document).ready(readyNow);
 
+//outputToDom runs the bonusCalculator and outputs its results to the DOM
 function outputToDom() {
-  $('#employeeList').empty();
+
+  //clear out ul's
+  $('#employeeList1').empty();
+  $('#employeeList2').empty();
+  $('#employeeList3').empty();
+  $('#employeeList4').empty();
   
   for (let employee of employees) {
-    let bonusObject = bonusCalculator(employee);
-    let bonusString = bonusObject.name + bonusObject.bonusPercentage + bonusObject.totalBonus + bonusObject.totalCompensation;
-    $('#employeeList1').append('<li>' + bonusCalculator(employee).name + '</li>');
-    $('#employeeList2').append('<li>' + bonusCalculator(employee).bonusPercentage + '% </li>');
-    $('#employeeList3').append('<li>$' + bonusCalculator(employee).totalBonus + '</li>');
-    $('#employeeList4').append('<li>$'  + bonusCalculator(employee).totalCompensation + '</li>');
+    //run bonus calculator
+    let empBonusInfo = bonusCalculator(employee);
+
+    //append each item to its desired ul
+    $('#employeeList1').append('<li>' + empBonusInfo.name + '</li>');
+    $('#employeeList2').append('<li>' + empBonusInfo.bonusPercentage + '% </li>');
+    $('#employeeList3').append('<li>$' + empBonusInfo.totalBonus + '</li>');
+    $('#employeeList4').append('<li>$' + empBonusInfo.totalCompensation + '</li>');
   }
-}
+} //end outputToDom
 
 function readyNow() {
   console.log('jquery loaded')
